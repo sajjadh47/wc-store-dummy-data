@@ -93,7 +93,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -264,7 +264,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -441,7 +441,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -606,7 +606,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -771,7 +771,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -935,7 +935,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -1101,7 +1101,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -1266,7 +1266,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -1434,7 +1434,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -1599,7 +1599,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -1764,7 +1764,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -1929,7 +1929,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -2093,7 +2093,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -2257,7 +2257,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -2419,7 +2419,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -2593,7 +2593,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -2767,7 +2767,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -2949,7 +2949,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -3123,7 +3123,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -3297,7 +3297,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -3474,7 +3474,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -3639,7 +3639,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -3795,7 +3795,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -3967,7 +3967,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
@@ -4137,7 +4137,7 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_manage_stock</wp:meta_key>
-    <wp:meta_value><![CDATA[yes]]></wp:meta_value>
+    <wp:meta_value><![CDATA[no]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_backorders</wp:meta_key>
