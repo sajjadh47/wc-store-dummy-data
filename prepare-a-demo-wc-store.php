@@ -120,6 +120,22 @@ function padwcs_wc_custom_setup_enable_cod_gateway() {
 add_action( 'woocommerce_init', 'padwcs_wc_custom_setup_enable_cod_gateway' );
 
 /**
+ * Import content.
+ */
+function padwcs_import_content() {
+	?>
+		<div class="container">
+			<h3 class="title" id="title">🚀 Hang Tight — Your Demo Site is on Its Way...</h3>
+			<div class="progress">
+				<div class="progress-bar" id="progress-bar" style="width: 1%;"></div>
+			</div>
+		</div>
+		<style type="text/css">.container{position:absolute;top:0;left:0;background:#1e1e1e;color:#fff;z-index:5;display:flex;flex-direction:column;width:100%;height:100%;justify-content:center;align-items:center;opacity:1;transition:opacity ease-in .25s;gap:20px}.progress{position:relative;width:512px;max-width:60vw;height:4px;margin:4px auto;border-radius:10px;background:#32363a}.progress .progress-bar{opacity:0}.progress .progress-bar{opacity:1}.progress-bar{position:absolute;inset:0 100% 0 0;width:0;background:#3858e9;border-radius:2px;transition:opacity linear .2s,width ease-in .2s;}.title{font-weight:400;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:1.1rem;margin:0}</style>
+	<?php
+}
+add_action( 'admin_footer', 'padwcs_import_content' );
+
+/**
  * Imports sample WooCommerce products from a predefined CSV string.
  *
  * This function creates simple and variable products, their categories, tags,
