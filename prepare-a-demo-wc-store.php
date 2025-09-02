@@ -117,7 +117,7 @@ function padwcs_import_content() {
 	?>
 		<div class="demo-importing-container">
 			<h3 class="demo-importing-title" id="demo-importing-title">🚀 Hang Tight — Your Demo Site is on Its Way...</h3>
-			<div class="progress">
+			<div class="demo-importing-progress">
 				<div class="demo-importing-progress-bar" id="demo-importing-progress-bar" style="width: 1%;"></div>
 			</div>
 		</div>
