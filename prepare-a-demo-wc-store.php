@@ -114,6 +114,10 @@ add_action( 'woocommerce_init', 'padwcs_wc_custom_setup_enable_cod_gateway' );
  * Import content.
  */
 function padwcs_import_content() {
+	if ( get_option( 'demoImported', false ) ) {
+		return;
+	}
+
 	?>
 		<div class="demo-importing-container">
 			<h3 class="demo-importing-title" id="demo-importing-title">🚀 Hang Tight — Your Demo Site is on Its Way...</h3>
@@ -124,12 +128,6 @@ function padwcs_import_content() {
 		<style type="text/css">html,body,.demo-importing-container{overflow:hidden;}.demo-importing-container{position:fixed;top:0;left:0;background:#1e1e1e;color:#fff;z-index:9999999999999;display:flex;flex-direction:column;width:100%;height:100%;justify-content:center;align-items:center;opacity:1;transition:opacity ease-in .25s;gap:20px}.demo-importing-progress{position:relative;width:512px;max-width:60vw;height:4px;margin:4px auto;border-radius:10px;background:#32363a}.demo-importing-progress .demo-importing-progress-bar{opacity:0}.demo-importing-progress .demo-importing-progress-bar{opacity:1}.demo-importing-progress-bar{position:absolute;inset:0 100% 0 0;width:0;background:#3858e9;border-radius:2px;transition:opacity linear .2s,width ease-in .2s;}.demo-importing-title{font-weight:400;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:1.1rem;margin:0;color:white;}</style>
 		<script type="text/javascript">
 		window.addEventListener( 'load', function() {
-			// Check localStorage to prevent running on reload
-			if ( localStorage.getItem( 'demoImported' ) === 'true' ) {
-				console.log('Demo import already completed');
-				return;
-			}
-
 			var progressInterval;
 
 			function updateProgress( percent )
@@ -184,9 +182,6 @@ function padwcs_import_content() {
 
 			function create_demo()
 			{
-				// Set flag in localStorage on success
-				localStorage.setItem( 'demoImported', 'true' );
-
 				var currentProgress				= 1;
 
 				progressInterval 				= setInterval( () =>
@@ -206,22 +201,11 @@ function padwcs_import_content() {
 
 				fetch( '/wp-admin/admin-ajax.php?action=padwcs_import_content' ).then( response => response.json() ).then( data =>
 				{
-					if ( data.success )
-					{
-						setTimeout( () =>
-						{
-							window.location.href = data.data.site_url;
-
-						}, 1000 );
-					}
-					else
-					{
-						setErrorMessage( 'Error: ' + data.data.message );
-					}
+					window.location.href = '<?php echo get_option( 'redirect_link', false ); ?>';
 				} )
 				.catch( error =>
 				{
-					setErrorMessage( 'Something went wrong! Please try again.' );
+					window.location.href = '<?php echo get_option( 'redirect_link', false ); ?>';
 				} );
 			}
 
@@ -247,6 +231,8 @@ add_action( 'wp_ajax_padwcs_import_content', 'padwcs_import_woocommerce_products
  * @return void
  */
 function padwcs_import_woocommerce_products_from_csv() {
+	update_option( 'demoImported', true );
+
 	// CSV data as a string. In a real application, this might be read from a file.
 	$csv_data = <<<CSV
 ID,Type,SKU,Name,Published,Is featured?,Visibility in catalog,Short description,Description,Date sale price starts,Date sale price ends,Tax status,Tax class,In stock?,Stock,Backorders allowed?,Sold individually?,Weight (lbs),Length (in),Width (in),Height (in),Allow customer reviews?,Purchase note,Sale price,Regular price,Categories,Tags,Shipping class,Images,Download limit,Download expiry days,Parent,Grouped products,Upsells,Cross-sells,External URL,Button text,Position,Attribute 1 name,Attribute 1 value(s),Attribute 1 visible,Attribute 1 global,Attribute 2 name,Attribute 2 value(s),Attribute 2 visible,Attribute 2 global,Download 1 name,Download 1 URL,Download 2 name,Download 2 URL
@@ -469,8 +455,6 @@ CSV;
 			}
 		}
 	}
-
-	wp_send_json_success( array( 'site_url' => trailingslashit( site_url() ) ) );
 
 	die();
 }
