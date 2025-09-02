@@ -456,6 +456,10 @@ CSV;
 			}
 		}
 	}
+
+	wp_send_json_success( array( 'site_url' => trailingslashit( site_url() ) ) );
+
+	die();
 }
 
 /**
