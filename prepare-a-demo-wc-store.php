@@ -32,9 +32,6 @@ add_filter( 'woocommerce_prevent_automatic_wizard_redirect', '__return_true' );
 
 /**
  * Configure permalink structure and clean activation redirect.
- *
- * Hook: after_setup_theme
- * Runs after the theme is initialized.
  */
 function padwcs_wc_custom_setup_configure_permalink_and_redirect() {
 	global $wp_rewrite;
@@ -46,13 +43,10 @@ function padwcs_wc_custom_setup_configure_permalink_and_redirect() {
 	// Remove WooCommerce activation redirect flag.
 	delete_transient( '_wc_activation_redirect' );
 }
-add_action( 'after_setup_theme', 'padwcswc_custom_setup_configure_permalink_and_redirect' );
+add_action( 'after_setup_theme', 'padwcs_wc_custom_setup_configure_permalink_and_redirect' );
 
 /**
  * Register Flat Rate shipping method if not already set.
- *
- * Hook: init
- * Runs on every request after WordPress has finished loading.
  */
 function padwcs_wc_custom_setup_register_flat_rate_shipping() {
 	// Ensure WooCommerce shipping classes are loaded.
@@ -98,9 +92,6 @@ add_action( 'init', 'padwcs_wc_custom_setup_register_flat_rate_shipping' );
 
 /**
  * Enable WooCommerce Cash on Delivery payment gateway.
- *
- * Hook: woocommerce_init
- * Runs when WooCommerce initializes.
  */
 function padwcs_wc_custom_setup_enable_cod_gateway() {
 	// Ensure WooCommerce payment classes are loaded.
