@@ -124,6 +124,11 @@ function padwcs_import_content() {
 		<style type="text/css">html,body,.demo-importing-container{overflow:hidden;}.demo-importing-container{position:fixed;top:0;left:0;background:#1e1e1e;color:#fff;z-index:9999999999999;display:flex;flex-direction:column;width:100%;height:100%;justify-content:center;align-items:center;opacity:1;transition:opacity ease-in .25s;gap:20px}.demo-importing-progress{position:relative;width:512px;max-width:60vw;height:4px;margin:4px auto;border-radius:10px;background:#32363a}.demo-importing-progress .demo-importing-progress-bar{opacity:0}.demo-importing-progress .demo-importing-progress-bar{opacity:1}.demo-importing-progress-bar{position:absolute;inset:0 100% 0 0;width:0;background:#3858e9;border-radius:2px;transition:opacity linear .2s,width ease-in .2s;}.demo-importing-title{font-weight:400;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:1.1rem;margin:0;color:white;}</style>
 		<script type="text/javascript">
 		window.addEventListener( 'load', function() {
+			// Check localStorage to prevent running on reload
+			if ( localStorage.getItem( 'demoImported' ) === 'true' ) {
+				return;
+			}
+
 			var progressInterval;
 
 			function updateProgress( percent )
@@ -178,6 +183,9 @@ function padwcs_import_content() {
 
 			function create_demo()
 			{
+				// Set flag in localStorage on success
+				localStorage.setItem( 'demoImported', 'true' );
+
 				var currentProgress				= 1;
 
 				progressInterval 				= setInterval( () =>
