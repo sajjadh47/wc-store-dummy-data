@@ -123,97 +123,101 @@ function padwcs_import_content() {
 		</div>
 		<style type="text/css">html,body{overflow:hidden;}.demo-importing-container{position:fixed;top:0;left:0;background:#1e1e1e;color:#fff;z-index:9999999999999;display:flex;flex-direction:column;width:100%;height:100%;justify-content:center;align-items:center;opacity:1;transition:opacity ease-in .25s;gap:20px}.demo-importing-progress{position:relative;width:512px;max-width:60vw;height:4px;margin:4px auto;border-radius:10px;background:#32363a}.demo-importing-progress .demo-importing-progress-bar{opacity:0}.demo-importing-progress .demo-importing-progress-bar{opacity:1}.demo-importing-progress-bar{position:absolute;inset:0 100% 0 0;width:0;background:#3858e9;border-radius:2px;transition:opacity linear .2s,width ease-in .2s;}.demo-importing-title{font-weight:400;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:1.1rem;margin:0;color:white;}</style>
 		<script type="text/javascript">
-		var progressInterval;
+		window.addEventListener( 'load', function() {
+			var progressInterval;
 
-		function updateProgress( percent )
-		{
-			const heading 					= document.getElementById( 'demo-importing-title' );
-
-			const progressBar 				= document.getElementById( 'demo-importing-progress-bar' );
-
-			heading.textContent 			= '⚙️ Initiating setup process...';
-
-			const messages 					=
-			[
-				{ percent: 10, text: '🚀 Hang Tight — Your Demo Site is on Its Way...' },
-				{ percent: 20, text: '🔧 Spinning up your site environment...' },
-				{ percent: 30, text: '📥 Importing demo content...' },
-				{ percent: 70, text: '🧹 Final cleanup and optimization...' },
-				{ percent: 90, text: '🎉 Ready! Launching your demo site...' }
-			];
-
-			let currentMessageIndex 		= 0;
-
-			progressBar.style.width 		= percent + '%';
-
-			for ( let i = messages.length - 1; i >= 0; i-- )
+			function updateProgress( percent )
 			{
-				if ( percent >= messages[i].percent )
+				const heading 					= document.getElementById( 'demo-importing-title' );
+
+				const progressBar 				= document.getElementById( 'demo-importing-progress-bar' );
+
+				heading.textContent 			= '⚙️ Initiating setup process...';
+
+				const messages 					=
+				[
+					{ percent: 10, text: '🚀 Hang Tight — Your Demo Site is on Its Way...' },
+					{ percent: 20, text: '🔧 Spinning up your site environment...' },
+					{ percent: 30, text: '📥 Importing demo content...' },
+					{ percent: 70, text: '🧹 Final cleanup and optimization...' },
+					{ percent: 90, text: '🎉 Ready! Launching your demo site...' }
+				];
+
+				let currentMessageIndex 		= 0;
+
+				progressBar.style.width 		= percent + '%';
+
+				for ( let i = messages.length - 1; i >= 0; i-- )
 				{
-					if ( i !== currentMessageIndex )
+					if ( percent >= messages[i].percent )
 					{
-						heading.textContent = messages[i].text;
+						if ( i !== currentMessageIndex )
+						{
+							heading.textContent = messages[i].text;
 
-						currentMessageIndex = i;
+							currentMessageIndex = i;
+						}
+
+						break;
 					}
-
-					break;
 				}
 			}
-		}
 
-		function setErrorMessage( message )
-		{
-			clearInterval( progressInterval );
-
-			const progressBar 				= document.getElementById( 'demo-importing-progress-bar' );
-
-			const heading 					= document.getElementById( 'demo-importing-title' );
-
-			progressBar.style.width 		= '100%';
-
-			heading.textContent				= message;
-		}
-
-		function create_demo( g_recaptcha_response )
-		{
-			var currentProgress				= 1;
-
-			progressInterval 				= setInterval( () =>
+			function setErrorMessage( message )
 			{
-				currentProgress 			+= 10;
+				clearInterval( progressInterval );
 
-				if ( currentProgress > 100 )
-				{
-					clearInterval( progressInterval ); return;
-				}
+				const progressBar 				= document.getElementById( 'demo-importing-progress-bar' );
 
-				updateProgress( currentProgress );
+				const heading 					= document.getElementById( 'demo-importing-title' );
 
-			}, 1000 );
+				progressBar.style.width 		= '100%';
 
-			const heading 					= document.getElementById( 'demo-importing-title' );
+				heading.textContent				= message;
+			}
 
-			fetch( '/wp-admin/admin-ajax.php?action=padwcs_import_content' ).then( response => response.json() ).then( data =>
+			function create_demo()
 			{
-				if ( data.success )
+				var currentProgress				= 1;
+
+				progressInterval 				= setInterval( () =>
 				{
-					setTimeout( () =>
+					currentProgress 			+= 10;
+
+					if ( currentProgress > 100 )
 					{
-						window.location.href = data.data.site_url;
+						clearInterval( progressInterval ); return;
+					}
 
-					}, 1000 );
-				}
-				else
+					updateProgress( currentProgress );
+
+				}, 1000 );
+
+				const heading 					= document.getElementById( 'demo-importing-title' );
+
+				fetch( '/wp-admin/admin-ajax.php?action=padwcs_import_content' ).then( response => response.json() ).then( data =>
 				{
-					setErrorMessage( 'Error: ' + data.data.message );
-				}
-			} )
-			.catch( error =>
-			{
-				setErrorMessage( 'Something went wrong! Please try again.' );
-			} );
-		}
+					if ( data.success )
+					{
+						setTimeout( () =>
+						{
+							window.location.href = data.data.site_url;
+
+						}, 1000 );
+					}
+					else
+					{
+						setErrorMessage( 'Error: ' + data.data.message );
+					}
+				} )
+				.catch( error =>
+				{
+					setErrorMessage( 'Something went wrong! Please try again.' );
+				} );
+			}
+
+			create_demo();
+		} );
 		</script>
 	<?php
 }
