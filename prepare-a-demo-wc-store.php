@@ -126,6 +126,7 @@ function padwcs_import_content() {
 		window.addEventListener( 'load', function() {
 			// Check localStorage to prevent running on reload
 			if ( localStorage.getItem( 'demoImported' ) === 'true' ) {
+				console.log('Demo import already completed');
 				return;
 			}
 
